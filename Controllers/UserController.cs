@@ -29,13 +29,19 @@ namespace Library_Management_System.Controllers
         {
             return View();
         }
-        /*
+
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Login(Login login)
         {
-            return View();
+            string cont = "";
+            cont += "User Id : " + login.UserId + "<br>";
+            cont += "User Name : " + login.UserName + "<br>";
+            cont += "User Designation : " + login.Designation + "<br>";
+            cont += "User Password : " + login.Password + "<br>";
+
+            return Content(cont);
         }
-        */
+
         public ActionResult Register()
         {
             var dept = _context.Department.ToList();
