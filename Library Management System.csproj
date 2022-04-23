@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202204231415064_AddTeacherBookIssue.designer.cs">
       <DependentUpon>202204231415064_AddTeacherBookIssue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204231419438_PopulateDepartmentTable.cs" />
+    <Compile Include="Migrations\202204231419438_PopulateDepartmentTable.designer.cs">
+      <DependentUpon>202204231419438_PopulateDepartmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -313,7 +317,8 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\About.cshtml" />
     <Content Include="Views\User\Contact.cshtml" />
-    <Content Include="Views\User\RegistrationForm.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204231415064_AddTeacherBookIssue.resx">
       <DependentUpon>202204231415064_AddTeacherBookIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204231419438_PopulateDepartmentTable.resx">
+      <DependentUpon>202204231419438_PopulateDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,45 @@
+﻿@model Library_Management_System.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<link href="~/Content/style1.css" rel="stylesheet" />
+<center><h2>Login</h2></center>
+
+<div class="jumbotron">
+    @using (Html.BeginForm("Login", "User"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserId)
+            @Html.TextBoxFor(m => m.UserId, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Designation)
+            <br />
+            <div class="form-check">
+                <label>
+                    @Html.RadioButtonFor(m => m.Designation, "Student", new { @class = "form-check-input" })Student
+                </label>
+            </div>
+            <div class="form-check">
+                <label>
+                    @Html.RadioButtonFor(m => m.Designation, "Teacher", new { @class = "form-check-input" })Teacher
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    }
+</div>
