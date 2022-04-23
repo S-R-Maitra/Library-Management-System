@@ -1,0 +1,61 @@
+﻿@model Library_Management_System.ViewModel.RegistrationFormViewModel
+@{
+    ViewBag.Title = "RegistrationForm";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<center><h2>Registration Form</h2></center>
+
+<div class="jumbotron">
+    @using (Html.BeginForm("Register", "User"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.Name)
+            @Html.TextBoxFor(m => m.Registration.Name, new { @class = "form-control" })
+            
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.Designation)
+            <br />
+            <div class="form-check">
+                <label>
+                    @Html.RadioButtonFor(m => m.Registration.Designation, "Student", new { @class = "form-check-input" })Student
+                </label>
+            </div>
+            <div class="form-check">
+                <label>
+                    @Html.RadioButtonFor(m => m.Registration.Designation, "Teacher", new { @class = "form-check-input" })Teacher
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.PhoneNo)
+            @Html.TextBoxFor(m => m.Registration.PhoneNo, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.EmailId)
+            @Html.TextBoxFor(m => m.Registration.EmailId, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.Password)
+            @Html.PasswordFor(m => m.Registration.Password, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.ConfirmPassword)
+            @Html.PasswordFor(m => m.Registration.ConfirmPassword, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.DepartmentID)
+            @Html.DropDownListFor(m => m.Registration.DepartmentID, new SelectList(Model.StudentDepartment, "Id", "Name"), "", new { @class = "form-control" })
+        </div>
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+    }
+</div>
+
