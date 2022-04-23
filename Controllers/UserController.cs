@@ -47,11 +47,20 @@ namespace Library_Management_System.Controllers
             };
             return View(registration);
         }
-        /*
+
         [HttpPost]
-        public ActionResult Register()
+        public ActionResult Register(Registration registration)
         {
-            return View();
-        }*/
+            string cont = "";
+            cont += "Name : " + registration.Name + "<br>";
+            cont += "Designation : " + registration.Designation + "<br>";
+            cont += "Phone No : " + registration.PhoneNo + "<br>";
+            cont += "Password : " + registration.Password + "<br>";
+            cont += "Confirm Password : " + registration.ConfirmPassword + "<br>";
+            cont += "Email Id : " + registration.EmailId + "<br>";
+            cont += "Department Id : " + registration.DepartmentID + "<br>";
+
+            return Content(cont);
+        }
     }
 }

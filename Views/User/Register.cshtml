@@ -52,7 +52,7 @@
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.DepartmentID)
-            @Html.DropDownListFor(m => m.Registration.DepartmentID, new SelectList(Model.StudentDepartment, "Id", "Name"), "", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.Registration.DepartmentID, new SelectList(Model.StudentDepartment, "Id", "Name"), "-------------Select Department-------------", new { @class = "form-control" })
         </div>
         @Html.AntiForgeryToken()
         <button type="submit" class="btn btn-primary btn-lg">Save</button>
