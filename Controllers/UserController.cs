@@ -45,11 +45,13 @@ namespace Library_Management_System.Controllers
         public ActionResult Register()
         {
             var dept = _context.Department.ToList();
+            var state = _context.IndianStatesAndUnionTerritories.ToList();
 
             RegistrationFormViewModel registration = new RegistrationFormViewModel
             {
                 Registration = new Registration(),
-                StudentDepartment = dept
+                StudentDepartment = dept,
+                StatesAndUT = state
             };
             return View(registration);
         }

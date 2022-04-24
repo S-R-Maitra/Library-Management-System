@@ -23,7 +23,8 @@ namespace Library_Management_System.Models
 
         [Display(Name = "Date of Birth")]
         public DateTime? DateOfBirth { get; set; }
-        public string State { get; set; }
+
+
         public string City { get; set; }
         public string Pincode { get; set; }
 
@@ -33,6 +34,11 @@ namespace Library_Management_System.Models
         [Required]
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
+
+        public IndianStatesAndUnionTerritories IndianStatesAndUnionTerritories { get; set; }
+        [Display(Name = "State / UT")]
+        public int StateID { get; set; }
+
 
         public Department Department { get; set; }
 

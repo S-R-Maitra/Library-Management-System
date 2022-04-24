@@ -219,6 +219,14 @@
     <Compile Include="Migrations\202204240712205_AddStudentTeacherMember.designer.cs">
       <DependentUpon>202204240712205_AddStudentTeacherMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204240804129_AddIndianStatesAndUnionTerritories.cs" />
+    <Compile Include="Migrations\202204240804129_AddIndianStatesAndUnionTerritories.designer.cs">
+      <DependentUpon>202204240804129_AddIndianStatesAndUnionTerritories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204240805169_PopulateIndianStatesAndUnionTerritories.cs" />
+    <Compile Include="Migrations\202204240805169_PopulateIndianStatesAndUnionTerritories.designer.cs">
+      <DependentUpon>202204240805169_PopulateIndianStatesAndUnionTerritories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminLogin.cs" />
@@ -417,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204240712205_AddStudentTeacherMember.resx">
       <DependentUpon>202204240712205_AddStudentTeacherMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204240804129_AddIndianStatesAndUnionTerritories.resx">
+      <DependentUpon>202204240804129_AddIndianStatesAndUnionTerritories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204240805169_PopulateIndianStatesAndUnionTerritories.resx">
+      <DependentUpon>202204240805169_PopulateIndianStatesAndUnionTerritories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
