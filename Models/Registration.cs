@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library_Management_System.Models
@@ -33,5 +34,9 @@ namespace Library_Management_System.Models
         [Display(Name = "Department")]
         public long DepartmentID { get; set; }
 
+        internal object Include(object p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
