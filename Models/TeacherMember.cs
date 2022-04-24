@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library_Management_System.Models
@@ -13,8 +14,7 @@ namespace Library_Management_System.Models
         public long? PhoneNo { get; set; }
         public string EmailId { get; set; }
 
-        [StringLength(50)]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string State { get; set; }
         public string City { get; set; }
         public string Pincode { get; set; }

@@ -29,6 +29,8 @@ namespace Library_Management_System.Models
         public DbSet<TeacherMember> TeacherMember { get; set; }
         public DbSet<StudentBookIssue> StudentBookIssue { get; set; }
         public DbSet<TeacherBookIssue> TeacherBookIssue { get; set; }
+
+        public DbSet<IndianStatesAndUnionTerritories> IndianStatesAndUnionTerritories { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

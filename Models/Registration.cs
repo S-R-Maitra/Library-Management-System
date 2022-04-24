@@ -21,6 +21,12 @@ namespace Library_Management_System.Models
         [Display(Name = "Mail id")]
         public string EmailId { get; set; }
 
+        [Display(Name = "Date of Birth")]
+        public DateTime? DateOfBirth { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Pincode { get; set; }
+
         [Required]
         public string Password { get; set; }
 
@@ -34,9 +40,5 @@ namespace Library_Management_System.Models
         [Display(Name = "Department")]
         public long DepartmentID { get; set; }
 
-        internal object Include(object p)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

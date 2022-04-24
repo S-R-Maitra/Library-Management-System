@@ -57,6 +57,19 @@ namespace Library_Management_System.Controllers
         [HttpPost]
         public ActionResult Register(Registration registration)
         {
+
+            if (string.Equals(registration.Designation, "Teacher"))
+            {
+                TeacherMember tm = new TeacherMember
+                {
+                    Name = registration.Name,
+                    PhoneNo = registration.PhoneNo,
+                    EmailId = registration.EmailId,
+                    DateOfBirth = (System.DateTime)registration.DateOfBirth
+                };
+            }
+
+            /*
             var dName = _context.Department.SingleOrDefault(c => c.Id == registration.DepartmentID);
             string cont = "";
             cont += "Name : " + registration.Name + "<br>";
@@ -66,8 +79,8 @@ namespace Library_Management_System.Controllers
             cont += "Confirm Password : " + registration.ConfirmPassword + "<br>";
             cont += "Email Id : " + registration.EmailId + "<br>";
             cont += "Department Name : " + dName.Name + "<br>";
-
-            return Content(cont);
+            */
+            return View();
         }
     }
 }
