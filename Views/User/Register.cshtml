@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 <link href="~/Content/style1.css" rel="stylesheet" />
+<link href="~/Content/style1.css" rel="stylesheet" />
 <center><h2>Registration Form</h2></center>
 
 <div class="jumbotron">
@@ -12,7 +13,7 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.Name)
             @Html.TextBoxFor(m => m.Registration.Name, new { @class = "form-control" })
-
+            @Html.ValidationMessageFor(m => m.Registration.Name, null, new {@class="error"})
         </div>
 
         <div class="form-group">
@@ -28,57 +29,61 @@
                     @Html.RadioButtonFor(m => m.Registration.Designation, "Teacher", new { @class = "form-check-input" })Teacher
                 </label>
             </div>
+            @Html.ValidationMessageFor(m=>m.Registration.Designation, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.PhoneNo)
             @Html.TextBoxFor(m => m.Registration.PhoneNo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.Registration.PhoneNo, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.EmailId)
             @Html.TextBoxFor(m => m.Registration.EmailId, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.Registration.EmailId, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.Password)
             @Html.PasswordFor(m => m.Registration.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.Registration.Password, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.ConfirmPassword)
             @Html.PasswordFor(m => m.Registration.ConfirmPassword, new { @class = "form-control" })
-        </div>
-
-
-
-
-
-
-
-        <div class="form-group">
-            @Html.LabelFor(m=>m.Registration.DateOfBirth)<br />
-            @Html.EditorFor(m=>m.Registration.DateOfBirth, new { htmlAttributes= new { @class = "datepicker" } })
+            @Html.ValidationMessageFor(m=>m.Registration.ConfirmPassword, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m=>m.Registration.StateID)
-            @Html.DropDownListFor(m=>m.Registration.StateID,new SelectList(Model.StatesAndUT, "Id", "Name"), "-------------Select State / UT-------------", new { @class = "form-control" })
+            @Html.LabelFor(m => m.Registration.DateOfBirth)<br />
+            @Html.EditorFor(m => m.Registration.DateOfBirth, new { htmlAttributes = new { @class = "datepicker" } })
+            @Html.ValidationMessageFor(m=>m.Registration.DateOfBirth, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m=>m.Registration.City)
-            @Html.TextBoxFor(m=>m.Registration.City)
+            @Html.LabelFor(m => m.Registration.StateID)
+            @Html.DropDownListFor(m => m.Registration.StateID, new SelectList(Model.StatesAndUT, "Id", "Name"), "-------------Select State / UT-------------", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.Registration.StateID, null, new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Registration.City)
+            @Html.TextBoxFor(m => m.Registration.City)
+            @Html.ValidationMessageFor(m => m.Registration.City, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.Pincode)
             @Html.TextBoxFor(m => m.Registration.Pincode)
+            @Html.ValidationMessageFor(m => m.Registration.Pincode, null, new { @class = "error" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Registration.DepartmentID)
             @Html.DropDownListFor(m => m.Registration.DepartmentID, new SelectList(Model.StudentDepartment, "Id", "Name"), "-------------Select Department-------------", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Registration.DepartmentID, null, new { @class = "error" })
         </div>
         @Html.AntiForgeryToken()
         <button type="submit" class="btn btn-primary btn-lg">Save</button>
@@ -90,13 +95,25 @@
 {
     <script src="~/Scripts/jquery-ui-1.13.1.min.js"></script>
     <script>
-    $(document).ready(function () {
-        $(".datepicker").datepicker({
-            dateFormat: "dd-mm-yy",
-            changemonth: true,
-            changeyear: true
-      });
-   });
+        $(document).ready(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "dd-mm-yy",
+                changemonth: true,
+                changeyear: true
+            });
+        });
+        $(document).ready(
+            function () {
+                $.validator.methods.date = function (value, element) {
+                    return this.optional(element) || moment(value, "DD-MM-YYYY", true).isValid();
+                }
+            }
+        );
     </script>
 }
 
+@section validation{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+}

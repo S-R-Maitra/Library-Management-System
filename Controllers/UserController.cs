@@ -67,22 +67,47 @@ namespace Library_Management_System.Controllers
                     Name = registration.Name,
                     PhoneNo = registration.PhoneNo,
                     EmailId = registration.EmailId,
-                    DateOfBirth = (System.DateTime)registration.DateOfBirth
+                    DateOfBirth = (System.DateTime)registration.DateOfBirth,
+                    City = registration.City,
+                    Pincode = registration.Pincode,
+                    Password = registration.Password,
+                    DepartmentID = registration.DepartmentID,
+                    State = _context.IndianStatesAndUnionTerritories.SingleOrDefault(c => c.Id == registration.StateID).Name
                 };
+                _context.TeacherMember.Add(tm);
             }
 
-            /*
-            var dName = _context.Department.SingleOrDefault(c => c.Id == registration.DepartmentID);
-            string cont = "";
-            cont += "Name : " + registration.Name + "<br>";
-            cont += "Designation : " + registration.Designation + "<br>";
-            cont += "Phone No : " + registration.PhoneNo + "<br>";
-            cont += "Password : " + registration.Password + "<br>";
-            cont += "Confirm Password : " + registration.ConfirmPassword + "<br>";
-            cont += "Email Id : " + registration.EmailId + "<br>";
-            cont += "Department Name : " + dName.Name + "<br>";
-            */
-            return View();
+            else if (string.Equals(registration.Designation, "Student"))
+            {
+                StudentMember sm = new StudentMember
+                {
+                    Name = registration.Name,
+                    PhoneNo = registration.PhoneNo,
+                    EmailId = registration.EmailId,
+                    DateOfBirth = (System.DateTime)registration.DateOfBirth,
+                    City = registration.City,
+                    Pincode = registration.Pincode,
+                    Password = registration.Password,
+                    DepartmentID = registration.DepartmentID,
+                    State = _context.IndianStatesAndUnionTerritories.SingleOrDefault(c => c.Id == registration.StateID).Name
+                };
+                _context.StudentMember.Add(sm);
+            }
+
+            _context.SaveChanges();
+
+            return Content("Registration Successful!");
+
+            //string cont = "";
+            //cont += "Name : " + registration.Name + "<br>";
+            //cont += "Designation : " + registration.Designation + "<br>";
+            //cont += "Phone No : " + registration.PhoneNo + "<br>";
+            //cont += "Password : " + registration.Password + "<br>";
+            //cont += "Confirm Password : " + registration.ConfirmPassword + "<br>";
+            //cont += "Email Id : " + registration.EmailId + "<br>";
+            //cont += "Department Name : " + _context.Department.SingleOrDefault(c => c.Id == registration.DepartmentID).Name + "<br>";
+            //cont += "Date of Birth : " + registration.DateOfBirth;
+            //return Content(cont);
         }
     }
 }
