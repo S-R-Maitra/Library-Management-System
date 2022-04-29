@@ -33,13 +33,15 @@ namespace Library_Management_System.Controllers
         [HttpPost]
         public ActionResult Login(Login login)
         {
-            string cont = "";
-            cont += "User Id : " + login.UserId + "<br>";
-            cont += "User Name : " + login.UserName + "<br>";
-            cont += "User Designation : " + login.Designation + "<br>";
-            cont += "User Password : " + login.Password + "<br>";
+            TempData["login"] = login;
 
-            return Content(cont);
+            if (string.Equals(login.Designation, "Teacher"))
+                return this.RedirectToAction("Teacher");
+
+            else if (string.Equals(login.Designation, "Student"))
+                return this.RedirectToAction("Student");
+
+            return View(login);
         }
 
         public ActionResult Register()
@@ -72,6 +74,7 @@ namespace Library_Management_System.Controllers
                     Pincode = registration.Pincode,
                     Password = registration.Password,
                     DepartmentID = registration.DepartmentID,
+                    Address = registration.Address,
                     State = _context.IndianStatesAndUnionTerritories.SingleOrDefault(c => c.Id == registration.StateID).Name
                 };
                 _context.TeacherMember.Add(tm);
@@ -89,6 +92,7 @@ namespace Library_Management_System.Controllers
                     Pincode = registration.Pincode,
                     Password = registration.Password,
                     DepartmentID = registration.DepartmentID,
+                    Address = registration.Address,
                     State = _context.IndianStatesAndUnionTerritories.SingleOrDefault(c => c.Id == registration.StateID).Name
                 };
                 _context.StudentMember.Add(sm);
@@ -108,6 +112,34 @@ namespace Library_Management_System.Controllers
             //cont += "Department Name : " + _context.Department.SingleOrDefault(c => c.Id == registration.DepartmentID).Name + "<br>";
             //cont += "Date of Birth : " + registration.DateOfBirth;
             //return Content(cont);
+        }
+
+        public ActionResult Student()
+        {
+            Login login = (Login)TempData["login"];
+
+            var details = _context.StudentMember.SingleOrDefault(c => c.Id == login.UserId);
+            if (details == null)
+                return HttpNotFound();
+
+            if (string.Equals(login.UserName, details.Name) && string.Equals(login.Password, details.Password))
+                return Content("Login Successful");
+
+            return Content("Login failed!");
+        }
+
+        public ActionResult Teacher()
+        {
+            Login login = (Login)TempData["login"];
+
+            var details = _context.TeacherMember.SingleOrDefault(c => c.Id == login.UserId);
+            if (details == null)
+                return HttpNotFound();
+
+            if (string.Equals(login.UserName, details.Name) && string.Equals(login.Password, details.Password))
+                return Content("Login Successful");
+
+            return Content("Login failed!");
         }
     }
 }

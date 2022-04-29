@@ -4,7 +4,7 @@ namespace Library_Management_System.Models
 {
     public class Login
     {
-        [Required]
+        [Required(ErrorMessage = "UserID is required")]
         [Display(Name = "User ID")]
         public int UserId { get; set; }
 
@@ -12,10 +12,11 @@ namespace Library_Management_System.Models
         [Display(Name = "User Name")]
         public string UserName { get; set; }
 
-        [Required]
-        [Display(Name = "Password")]
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Please provide a designation.")]
         public string Designation { get; set; }
     }
 }

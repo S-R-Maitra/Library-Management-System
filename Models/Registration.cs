@@ -33,6 +33,9 @@ namespace Library_Management_System.Models
         [Required(ErrorMessage = "Enter the pincode.")]
         public string Pincode { get; set; }
 
+        [Required(ErrorMessage = "Please enter your address.")]
+        public string Address { get; set; }
+
         [Required]
         public string Password { get; set; }
 

@@ -63,6 +63,13 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(m => m.Registration.Address)
+            @Html.TextAreaFor(m => m.Registration.Address, new { htmlAttributes = new { @class = "datepicker" } })
+            @Html.ValidationMessageFor(m => m.Registration.Address, null, new { @class = "error" })
+        </div>
+
+
+        <div class="form-group">
             @Html.LabelFor(m => m.Registration.StateID)
             @Html.DropDownListFor(m => m.Registration.StateID, new SelectList(Model.StatesAndUT, "Id", "Name"), "-------------Select State / UT-------------", new { @class = "form-control" })
             @Html.ValidationMessageFor(m=>m.Registration.StateID, null, new { @class = "error" })
