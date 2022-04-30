@@ -1,0 +1,66 @@
+﻿@model Library_Management_System.Models.Login
+
+@{
+    ViewBag.Title = "Teacher";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<link href="~/Content/Card1.css" rel="stylesheet" />
+
+<h2>Welcome @ViewBag.UserDetails.Name</h2>
+
+<div class="card">
+
+    <div class="bio-des">
+        <table>
+            <tr>
+                <td class="label">Name:</td>
+                <td>@ViewBag.UserDetails.Name</td>
+            </tr>
+            <tr>
+                <td class="label">Id:</td>
+                <td>@ViewBag.UserDetails.Id</td>
+            </tr>
+
+            <tr>
+                <td class="label">Date Of Birth:</td>
+                <td>@ViewBag.UserDetails.DateOfBirth</td>
+            </tr>
+
+            <tr>
+                <td class="label">Stream:</td>
+                <td>@ViewBag.UserDetails.Department.Name</td>
+            </tr>
+            <tr>
+                <td class="label">Phone Number:</td>
+                <td>@ViewBag.UserDetails.PhoneNo</td>
+            </tr>
+            <tr>
+                <td class="label">Mail Id:</td>
+                <td>@ViewBag.UserDetails.EmailId</td>
+            </tr>
+
+            <tr>
+                <td class="label">Address:</td>
+                <td>@ViewBag.UserDetails.Address</td>
+            </tr>
+
+            <tr>
+                <td class="label">State/UT:</td>
+                <td>@ViewBag.UserDetails.State</td>
+            </tr>
+
+            <tr>
+                <td class="label">City:</td>
+                <td>@ViewBag.UserDetails.City</td>
+            </tr>
+
+            <tr>
+                <td class="label">Pincode:</td>
+                <td>@ViewBag.UserDetails.Pincode</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+

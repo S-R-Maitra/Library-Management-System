@@ -65,6 +65,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -178,6 +179,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -236,9 +238,14 @@
     <Compile Include="Migrations\202204240805169_PopulateIndianStatesAndUnionTerritories.designer.cs">
       <DependentUpon>202204240805169_PopulateIndianStatesAndUnionTerritories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204291653236_AddAdminLogin1.cs" />
+    <Compile Include="Migrations\202204291653236_AddAdminLogin1.designer.cs">
+      <DependentUpon>202204291653236_AddAdminLogin1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminLogin.cs" />
+    <Compile Include="Models\AdminLoginForm.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Department.cs" />
@@ -262,6 +269,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Card1.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
@@ -370,6 +378,7 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\style1.css" />
+    <Content Include="Content\style2.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -565,6 +574,9 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Scripts\moment.min.js.map" />
     <Content Include="Scripts\moment-with-locales.min.js.map" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\User\Student.cshtml" />
+    <Content Include="Views\User\Teacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -621,6 +633,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204240805169_PopulateIndianStatesAndUnionTerritories.resx">
       <DependentUpon>202204240805169_PopulateIndianStatesAndUnionTerritories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204291653236_AddAdminLogin1.resx">
+      <DependentUpon>202204291653236_AddAdminLogin1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

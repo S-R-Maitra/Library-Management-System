@@ -1,0 +1,27 @@
+
+*{
+  margin:0;
+  padding:0;
+}
+
+.card {
+    width: 40%;
+    margin: 3rem auto 3rem auto;    
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size:1.5rem;
+}
+
+.card .bio-des{
+    margin:0 auto 0 auto;
+}
+
+.bio-des table {
+    margin: 0 auto 0 auto;
+}
+
+.label{
+  color:black;
+  font-weight: bold;
+  font-size:1.5rem;
+}

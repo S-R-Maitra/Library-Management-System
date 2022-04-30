@@ -1,7 +1,9 @@
 ﻿using Library_Management_System.Models;
 using Library_Management_System.ViewModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
+using System.Windows.Forms;
 
 namespace Library_Management_System.Controllers
 {
@@ -21,6 +23,16 @@ namespace Library_Management_System.Controllers
         }
         // GET: User
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult StudentHomePage()
+        {
+            return View();
+        }
+
+        public ActionResult TeacherHomePage()
         {
             return View();
         }
@@ -100,46 +112,58 @@ namespace Library_Management_System.Controllers
 
             _context.SaveChanges();
 
-            return Content("Registration Successful!");
+            return RedirectToAction("Login");
 
-            //string cont = "";
-            //cont += "Name : " + registration.Name + "<br>";
-            //cont += "Designation : " + registration.Designation + "<br>";
-            //cont += "Phone No : " + registration.PhoneNo + "<br>";
-            //cont += "Password : " + registration.Password + "<br>";
-            //cont += "Confirm Password : " + registration.ConfirmPassword + "<br>";
-            //cont += "Email Id : " + registration.EmailId + "<br>";
-            //cont += "Department Name : " + _context.Department.SingleOrDefault(c => c.Id == registration.DepartmentID).Name + "<br>";
-            //cont += "Date of Birth : " + registration.DateOfBirth;
-            //return Content(cont);
         }
 
         public ActionResult Student()
         {
             Login login = (Login)TempData["login"];
 
-            var details = _context.StudentMember.SingleOrDefault(c => c.Id == login.UserId);
-            if (details == null)
+            var detail = _context.StudentMember.Include(m => m.Department).Where(m => m.Department.Id == m.DepartmentID).SingleOrDefault(m => m.Id == login.UserId);
+
+
+            if (detail == null)
                 return HttpNotFound();
 
-            if (string.Equals(login.UserName, details.Name) && string.Equals(login.Password, details.Password))
-                return Content("Login Successful");
+            if (string.Equals(login.UserName, detail.Name) && string.Equals(login.Password, detail.Password))
+            {
+                ViewBag.UserDetails = detail;
+                return View();
+            }
 
-            return Content("Login failed!");
+
+            MessageBox.Show("Login failed!");
+
+            return Content("" +
+                "<script language='javascript' type='text/javascript'>" +
+                    "alert('Login failed!');" +
+                "</script>");
         }
 
         public ActionResult Teacher()
         {
             Login login = (Login)TempData["login"];
 
-            var details = _context.TeacherMember.SingleOrDefault(c => c.Id == login.UserId);
-            if (details == null)
+            var detail = _context.TeacherMember.Include(m => m.Department).Where(m => m.Department.Id == m.DepartmentID).SingleOrDefault(m => m.Id == login.UserId);
+
+
+            if (detail == null)
                 return HttpNotFound();
 
-            if (string.Equals(login.UserName, details.Name) && string.Equals(login.Password, details.Password))
-                return Content("Login Successful");
+            if (string.Equals(login.UserName, detail.Name) && string.Equals(login.Password, detail.Password))
+            {
+                ViewBag.UserDetails = detail;
+                return View();
+            }
 
-            return Content("Login failed!");
+
+            MessageBox.Show("Login failed!");
+
+            return Content("" +
+                "<script language='javascript' type='text/javascript'>" +
+                    "alert('Login failed!');" +
+                "</script>");
         }
     }
 }
