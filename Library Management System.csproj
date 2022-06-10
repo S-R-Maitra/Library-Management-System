@@ -577,6 +577,8 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\User\Student.cshtml" />
     <Content Include="Views\User\Teacher.cshtml" />
+    <Content Include="Views\Shared\_NavBar3.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
