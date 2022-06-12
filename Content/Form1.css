@@ -1,0 +1,12 @@
+﻿.editor label {
+    float: left;
+    margin-right:1.5rem;
+    // just putting an example here - but give them a width to align better text-align: right;
+    // this right-aligns them with the input
+}
+
+.editor input[type=text] {
+    margin-left: 1.5rem;
+    // just putting an example value in here to make your inputs uniform in length margin: 0 0 0 10px;
+    // just some breathing room from the labels
+}

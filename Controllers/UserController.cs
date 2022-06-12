@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Windows.Forms;
 
+
 namespace Library_Management_System.Controllers
 {
     public class UserController : Controller
@@ -164,6 +165,11 @@ namespace Library_Management_System.Controllers
                 "<script language='javascript' type='text/javascript'>" +
                     "alert('Login failed!');" +
                 "</script>");
+        }
+
+        public ActionResult LogOut()
+        {
+            return RedirectToAction("Index");
         }
     }
 }

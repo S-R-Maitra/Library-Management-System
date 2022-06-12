@@ -2,7 +2,46 @@
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_Layout1.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<link href="~/Content/Card2.css" rel="stylesheet" />
 
-<p>Use this area to provide additional information.</p>
+<style>
+    .ele1 {
+        width: 150px;
+        height: 200px;
+    }
+
+    .slide1 {
+        position: fixed;
+        bottom: 30px;
+        margin-left: 0;
+        margin-right: 0;
+        left:-79px;
+    }
+</style>
+
+<div class="container">
+    <div class="card">
+        <h2>@ViewBag.Title.</h2>
+        <p>
+            The Online Library Management has been designed to computerize and automate the operations performed over the information about the members, book issues and returns and all other operations. This computerization of the library helps in many instances of its maintenance. It reduces the workload of
+            management as most of the manual work done is reduced. It manages and stores books information electronically according to students needs. The system helps both students and library manager to keep a constant track of all the books available in the library.
+        </p>
+    </div>
+
+    <div class="slide1">
+        <marquee behavior="scroll" direction="ltr">
+            <img src="~/assets/1.jpg" class="ele1">
+            <img src="~/assets/2.jpg" class="ele1">
+            <img src="~/assets/3.jpg" class="ele1">
+            <img src="~/assets/4.jpg" class="ele1">
+            <img src="~/assets/5.jpg" class="ele1">
+            <img src="~/assets/6.jpg" class="ele1">
+            <img src="~/assets/7.jpg" class="ele1">
+            <img src="~/assets/8.jpg" class="ele1">
+            <img src="~/assets/9.jpg" class="ele1">
+            <img src="~/assets/10.jpg" class="ele1">
+            <img src="~/assets/11.jpg" class="ele1">
+            <img src="~/assets/12.jpg" class="ele1">
+        </marquee>
+    </div>
+</div>

@@ -11,89 +11,158 @@
     @using (Html.BeginForm("Register", "User"))
     {
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.Name)
-            @Html.TextBoxFor(m => m.Registration.Name, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Registration.Name, null, new {@class="error"})
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.Registration.Designation)
-            <br />
-            <div class="form-check">
-                <label>
-                    @Html.RadioButtonFor(m => m.Registration.Designation, "Student", new { @class = "form-check-input" })Student
-                </label>
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.Name)
             </div>
-            <div class="form-check">
-                <label>
-                    @Html.RadioButtonFor(m => m.Registration.Designation, "Teacher", new { @class = "form-check-input" })Teacher
-                </label>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Registration.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.Name, null, new { @class = "error" })
             </div>
-            @Html.ValidationMessageFor(m=>m.Registration.Designation, null, new { @class = "error" })
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.PhoneNo)
-            @Html.TextBoxFor(m => m.Registration.PhoneNo, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m=>m.Registration.PhoneNo, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.Designation)
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">
+                    <label>
+                        @Html.RadioButtonFor(m => m.Registration.Designation, "Student", new { @class = "form-check-input" })Student
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        @Html.RadioButtonFor(m => m.Registration.Designation, "Teacher", new { @class = "form-check-input" })Teacher
+                    </label>
+                </div>
+                @Html.ValidationMessageFor(m => m.Registration.Designation, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.EmailId)
-            @Html.TextBoxFor(m => m.Registration.EmailId, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m=>m.Registration.EmailId, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.PhoneNo)
+            </div>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Registration.PhoneNo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.PhoneNo, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.Password)
-            @Html.PasswordFor(m => m.Registration.Password, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m=>m.Registration.Password, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.EmailId)
+            </div>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Registration.EmailId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.EmailId, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.ConfirmPassword)
-            @Html.PasswordFor(m => m.Registration.ConfirmPassword, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m=>m.Registration.ConfirmPassword, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.Password)
+            </div>
+            <div class="col-md-6">
+                @Html.PasswordFor(m => m.Registration.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.Password, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.DateOfBirth)<br />
-            @Html.EditorFor(m => m.Registration.DateOfBirth, new { htmlAttributes = new { @class = "datepicker" } })
-            @Html.ValidationMessageFor(m=>m.Registration.DateOfBirth, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.ConfirmPassword)
+            </div>
+            <div class="col-md-6">
+                @Html.PasswordFor(m => m.Registration.ConfirmPassword, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.ConfirmPassword, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.Address)
-            @Html.TextAreaFor(m => m.Registration.Address, new { htmlAttributes = new { @class = "datepicker" } })
-            @Html.ValidationMessageFor(m => m.Registration.Address, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.DateOfBirth)
+            </div>
+            <div class="col-md-6">
+                @Html.EditorFor(m => m.Registration.DateOfBirth, new { htmlAttributes = new { @class = "datepicker" } })
+                @Html.ValidationMessageFor(m => m.Registration.DateOfBirth, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
 
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.StateID)
-            @Html.DropDownListFor(m => m.Registration.StateID, new SelectList(Model.StatesAndUT, "Id", "Name"), "-------------Select State / UT-------------", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m=>m.Registration.StateID, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.Address)
+            </div>
+            <div class="col-md-6">
+                @Html.TextAreaFor(m => m.Registration.Address, new { htmlAttributes = new { @class = "datepicker" } })
+                @Html.ValidationMessageFor(m => m.Registration.Address, null, new { @class = "error" })
+            </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Registration.City)
-            @Html.TextBoxFor(m => m.Registration.City)
-            @Html.ValidationMessageFor(m => m.Registration.City, null, new { @class = "error" })
-        </div>
+        <br /><br />
 
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.Pincode)
-            @Html.TextBoxFor(m => m.Registration.Pincode)
-            @Html.ValidationMessageFor(m => m.Registration.Pincode, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.StateID)
+            </div>
+            <div class="col-md-6">
+                @Html.DropDownListFor(m => m.Registration.StateID, new SelectList(Model.StatesAndUT, "Id", "Name"), "-------------Select State / UT-------------", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.StateID, null, new { @class = "error" })
+            </div>
         </div>
 
+        <br /><br />
+
         <div class="form-group">
-            @Html.LabelFor(m => m.Registration.DepartmentID)
-            @Html.DropDownListFor(m => m.Registration.DepartmentID, new SelectList(Model.StudentDepartment, "Id", "Name"), "-------------Select Department-------------", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Registration.DepartmentID, null, new { @class = "error" })
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.City)
+            </div>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Registration.City)
+                @Html.ValidationMessageFor(m => m.Registration.City, null, new { @class = "error" })
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.Pincode)
+            </div>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.Registration.Pincode)
+                @Html.ValidationMessageFor(m => m.Registration.Pincode, null, new { @class = "error" })
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Registration.DepartmentID)
+            </div>
+            <div class="col-md-6">
+                @Html.DropDownListFor(m => m.Registration.DepartmentID, new SelectList(Model.StudentDepartment, "Id", "Name"), "-------------Select Department-------------", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Registration.DepartmentID, null, new { @class = "error" })
+            </div>
         </div>
         @Html.AntiForgeryToken()
-        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        <br /><br />
+        <center><button type="submit" class="btn btn-primary btn-lg">Save</button></center>
     }
 </div>
 

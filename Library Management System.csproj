@@ -46,10 +46,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=4.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
     <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Mvc2Futures.2.0.50217.0\lib\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
@@ -59,6 +60,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -264,12 +269,30 @@
     <Compile Include="ViewModel\RegistrationFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\1.jpg" />
+    <Content Include="assets\10.jpg" />
+    <Content Include="assets\11.jpg" />
+    <Content Include="assets\12.jpg" />
+    <Content Include="assets\2.jpg" />
+    <Content Include="assets\3.jpg" />
+    <Content Include="assets\4.jpg" />
+    <Content Include="assets\5.jpg" />
+    <Content Include="assets\6.jpg" />
+    <Content Include="assets\7.jpg" />
+    <Content Include="assets\8.jpg" />
+    <Content Include="assets\9.jpg" />
+    <Content Include="assets\background1.jpg" />
+    <Content Include="assets\book.ico" />
+    <Content Include="assets\library1.jpg" />
+    <Content Include="assets\library2.jfif" />
+    <Content Include="assets\photo-1507842217343-583bb7270b66.jpg" />
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Card1.css" />
+    <Content Include="Content\Card2.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
@@ -377,6 +400,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\Form1.css" />
     <Content Include="Content\style1.css" />
     <Content Include="Content\style2.css" />
     <Content Include="Content\themes\base\accordion.css" />
