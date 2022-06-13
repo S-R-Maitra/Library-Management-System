@@ -8,45 +8,72 @@
 
 <center><h2>Login</h2></center>
 
+<style>
+    .jumbotron {
+        width: 35%;
+        margin: 2% auto 2% auto;
+    }
+</style>
+
 <div class="jumbotron">
     @using (Html.BeginForm("Login", "User"))
     {
         <div class="form-group">
-            @Html.LabelFor(m => m.UserId)
-            @Html.TextBoxFor(m => m.UserId, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.UserId, null, new { @class = "error" })
-
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.UserName)
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "error" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.Password)
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "error" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.Designation)
-            <br />
-            <div class="form-check">
-                <label>
-                    @Html.RadioButtonFor(m => m.Designation, "Student", new { @class = "form-check-input" })Student
-                </label>
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.UserId)
             </div>
-            <div class="form-check">
-                <label>
-                    @Html.RadioButtonFor(m => m.Designation, "Teacher", new { @class = "form-check-input" })Teacher
-                </label>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.UserId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserId, null, new { @class = "error" })
             </div>
-            @Html.ValidationMessageFor(m => m.Designation, null, new { @class = "error" })
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
+        <br /><br />
+
+        <div class="form-group">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.UserName)
+            </div>
+            <div class="col-md-6">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName, null, new { @class = "error" })
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Password)
+            </div>
+            <div class="col-md-6">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, null, new { @class = "error" })
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Designation)
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">
+                    <label>
+                        @Html.RadioButtonFor(m => m.Designation, "Student", new { @class = "form-check-input" })Student
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        @Html.RadioButtonFor(m => m.Designation, "Teacher", new { @class = "form-check-input" })Teacher
+                    </label>
+                </div>
+                @Html.ValidationMessageFor(m => m.Designation, null, new { @class = "error" })
+            </div>
+        </div>
+
+        <center><button type="submit" class="btn btn-primary">Login</button></center>
     }
 </div>
 

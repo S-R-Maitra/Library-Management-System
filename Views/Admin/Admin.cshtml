@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<style>
+
+
+    .sub-menu{
+        display:none;
+    }
+
+    .func:hover .sub-menu{
+        display:block;
+    }
+
+    
+
+    .func .btn{
+        display:inline;
+    }
+
+    .btn{
+        width:10%;
+    }
+
+    .sub-menu ul li{
+        list-style:none;
+    }
+
+    .sub-menu ul li a{
+        text-decoration:none;
+        color:black;
+    }
+</style>
+
+<h2>Welcome Admin @ViewBag.Details.Name</h2>
+
+<div class="func"><div class="menu"><button class="btn btn-primary">Add</button></div>
+
+    <div class="sub-menu">
+        
+            <input type="submit" name="response" value="User" formaction=@Url.Action("AddUser") formmethod="post" class="btn btn-primary" />
+            
+            <input type="submit" name="response" value="Admin" formaction=@Url.Action("AddBooks") formmethod="post" class="btn btn-default" />
+        
+    </div>
+    
+</div>
+
+<br />
+
+<div class="func"><div class="menu"><button class="btn btn-primary">Remove</button></div>
+                  <div class="sub-menu">
+                      <input type="submit" name="response" value="User" formaction=@Url.Action("RemoveUser") formmethod="post" class="btn btn-primary" />
+
+                      <input type="submit" name="response" value="Admin" formaction=@Url.Action("RemoveBooks") formmethod="post" class="btn btn-default" />
+                  </div>
+</div>
+
+<br />
+
+<div class="func"><div class="menu"><button class="btn btn-primary">Update</button></div>
+                  <div class="sub-menu">
+                      <input type="submit" name="response" value="User" formaction=@Url.Action("UpdateUser") formmethod="post" class="btn btn-primary" />
+
+                      <input type="submit" name="response" value="Admin" formaction=@Url.Action("UpdateBooks") formmethod="post" class="btn btn-default" />
+                  </div>
+    
+</div>
+
+<br />
+
+<div class="func">
+    <div class="menu"><button class="btn btn-primary">View</button></div>
+                  <div class="sub-menu">
+                      <input type="submit" name="response" value="User" formaction=@Url.Action("ViewUser") formmethod="post" class="btn btn-primary" />
+
+                      <input type="submit" name="response" value="Admin" formaction=@Url.Action("ViewBooks") formmethod="post" class="btn btn-default" />
+                  </div>
+    
+</div>
+
+<br />

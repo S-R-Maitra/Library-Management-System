@@ -35,9 +35,20 @@ namespace Library_Management_System.Controllers
                 return HttpNotFound();
 
             if (string.Equals(details.Name, login.Name) && string.Equals(details.Password, login.Password))
-                return Content("Successful Admin Login");
+            {
+                ViewBag.Details = details;
+                return View("~/Views/Admin/Admin.cshtml");
+            }
+
 
             return Content("Admin Login failed");
         }
+
+        public ActionResult AddUsers()
+        {
+            return RedirectToAction("User/Register");
+        }
+
+
     }
 }
